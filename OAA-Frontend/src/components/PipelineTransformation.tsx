@@ -35,7 +35,7 @@ const PipelineTransformation: React.FC<PipelineTransformationProps> = ({ pipelin
     };
 
     const handleNextStep = async () => {
-        const response = await fetch('http://127.0.0.1:5000/process_next_stage', {
+        const response = await fetch('http://127.0.0.1:5000/api/process_next_stage', {
             method: 'POST',
         });
         const data = await response.json();
@@ -48,7 +48,7 @@ const PipelineTransformation: React.FC<PipelineTransformationProps> = ({ pipelin
 
     const updatePipelineData = async () => {
         try {
-            await fetch('http://127.0.0.1:5000/update_pipeline_data', {
+            await fetch('http://127.0.0.1:5000/api/update_pipeline_data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
